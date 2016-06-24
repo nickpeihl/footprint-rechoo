@@ -1,0 +1,29 @@
+{
+  "name": "footprint-rechoo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo index.js --live --serve bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Peihl <nickpeihl@gmail.com>",
+  "license": "Apache-2.0",
+  "browserify": {
+    "transform": [
+      "sheetify/transform"
+    ]
+  },
+  "dependencies": {
+    "choo": "^2.2.2",
+    "css-wipe": "^4.2.2",
+    "esri-leaflet": "^1.0.3",
+    "insert-css": "^0.2.0",
+    "leaflet": "^0.7.7",
+    "sheetify": "^5.0.3"
+  },
+  "devDependencies": {
+    "budo": "^8.3.0",
+    "tachyons": "^4.0.0-beta.33"
+  }
+}
