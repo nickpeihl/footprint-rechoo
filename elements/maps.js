@@ -8,12 +8,10 @@ module.exports = function (params, state, send) {
 
 ${maps.map(function (mapOpt) {
   var el = choo.view`
-    <article class="bg-white w-90-ns mw9-l ba b-black-10 mh3 mv3 h-50-l h-auto">
-    <div class="pv2 ph2">
-    <h2 class="">${mapOpt.id}</h2>
-    </div>
+    <div class="dib ma2 ba bw1 w-80 w-40-ns bg-near-white tc tl-ns">
+    <h2 class="f3">${mapOpt.id}</h2>
     ${createMap(mapOpt)}
-    </article>
+  </div>
   `
   return el
 })}
@@ -25,7 +23,7 @@ function createMap (mapOpt) {
   var mapOptions = mapOpt || {}
   var mapId = mapOptions.id || 'map'
   var el = choo.view`
-<div class="h5" id="${mapId}"></div>
+<div class="h5 ma2" id="${mapId}"></div>
 `
   var map = L.map(el, mapOptions)
   var baseLayer = mapOpt.baseMap || L.esri.tiledMapLayer({

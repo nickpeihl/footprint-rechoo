@@ -7,9 +7,9 @@ module.exports = function (params, state, send) {
   return choo.view`
 <div class="h-inherit">
 ${nav(params, state, send)}
-<section class="cf h-auto-ns">
+<article class="w-100 center">
 ${maps(params, state, send)}
-</section>
+</article>
 </div>
 `
 }
