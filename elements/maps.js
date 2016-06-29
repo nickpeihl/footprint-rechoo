@@ -8,8 +8,8 @@ module.exports = function (params, state, send) {
 
 ${maps.map(function (mapOpt) {
   var el = choo.view`
-    <div class="dib ma2 ba bw1 w-80 w-40-ns bg-near-white tc tl-ns">
-    <h2 class="f3">${mapOpt.id}</h2>
+    <div class="dib ma2 ba bw1 mw7 w-80 w-40-ns bg-near-white tc tl-ns">
+    <h2 class="f4">${mapOpt.id}</h2>
     ${createMap(mapOpt)}
   </div>
   `
