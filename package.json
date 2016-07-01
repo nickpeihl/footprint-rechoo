@@ -15,19 +15,15 @@
     ]
   },
   "dependencies": {
-    "choo": "^2.2.2",
+    "choo": "git://github.com/yoshuawuyts/choo.git#master",
     "css-wipe": "^4.2.2",
     "esri-leaflet": "^1.0.3",
     "insert-css": "^0.2.0",
     "leaflet": "^0.7.7",
-    "sheetify": "^5.0.3"
+    "sheetify": "^5.0.3",
+    "tachyons": "4.0.0-beta.33"
   },
   "devDependencies": {
-    "budo": "^8.3.0",
-    "envify": "^3.4.1",
-    "es2020": "^1.1.7",
-    "tachyons": "^4.0.0-beta.33",
-    "uglify-js": "^2.6.4",
-    "uglifyify": "^3.0.2"
+    "budo": "^8.3.0"
   }
 }
