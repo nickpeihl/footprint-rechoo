@@ -3,6 +3,7 @@ var sf = require('sheetify')
 
 sf('css-wipe/dest/bundle')
 sf('tachyons')
+sf('./node_modules/leaflet/dist/leaflet.css', { global: true })
 
 var app = choo()
 
@@ -17,6 +18,7 @@ app.model({
 })
 
 app.model(require('./models/footprint-map'))
+app.model(require('./models/buttons'))
 
 app.router(function (route) {
   return [
