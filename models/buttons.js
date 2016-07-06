@@ -32,14 +32,5 @@ module.exports = {
       return {buttonGroup: state.buttons.concat(newButtons)}
     }
   },
-  effects: {
-    doAsyncProcess: function (action, state, send) {
-      console.log('doing something...')
-      send('buttonGroup:toggleClickable')
-      setTimeout(function () {
-        console.log('done')
-        send('buttonGroup:toggleClickable')
-      }, 2000)
-    }
-  }
+  effects: {}
 }

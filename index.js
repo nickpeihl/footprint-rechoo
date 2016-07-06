@@ -14,6 +14,16 @@ app.model({
     params: {
       navs: ['Help', 'About', 'Achievements']
     }
+  },
+  effects: {
+    doAsyncProcess: function (action, state, send) {
+      console.log('doing something...')
+      send('buttonGroup:toggleClickable')
+      setTimeout(function () {
+        console.log('done')
+        send('buttonGroup:toggleClickable')
+      }, 2000)
+    }
   }
 })
 

@@ -12,6 +12,6 @@ module.exports = function (params, state, send) {
   return el
 
   function onClick (e) {
-    send('buttonGroup:doAsyncProcess', { id: e.target.id, disabled: e.target.disabled })
+    send('doAsyncProcess', { id: e.target.id, disabled: e.target.disabled })
   }
 }
