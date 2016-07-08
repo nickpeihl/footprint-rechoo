@@ -1,28 +1,27 @@
-var choo = require('choo')
-var sf = require('sheetify')
+const choo = require('choo')
+const sf = require('sheetify')
 
 sf('css-wipe/dest/bundle')
 sf('tachyons')
 sf('./node_modules/leaflet/dist/leaflet.css', { global: true })
 
-var app = choo()
+const app = choo()
 
-var review = require('./views/review')
+const review = require('./views/review')
 
 app.model({
   state: {
-    params: {
-      navs: ['Help', 'About', 'Achievements']
-    }
+    navs: ['Help', 'About', 'Achievements']
   },
   effects: {
-    doAsyncProcess: function (action, state, send) {
+    doAsyncProcess: (data, state, send, done) => {
       console.log('doing something...')
-      send('buttonGroup:toggleClickable')
-      setTimeout(function () {
-        console.log('done')
-        send('buttonGroup:toggleClickable')
-      }, 2000)
+      send('buttonGroup:toggleClickable', {}, () => {
+        setTimeout(function () {
+          console.log('done')
+          send('buttonGroup:toggleClickable', {}, done)
+        }, 2000)
+      })
     }
   }
 })
@@ -30,11 +29,9 @@ app.model({
 app.model(require('./models/footprint-map'))
 app.model(require('./models/buttons'))
 
-app.router(function (route) {
-  return [
-    route('/', review)
-  ]
-})
+app.router((route) => [
+  route('/', review)
+])
 
-var tree = app.start()
+const tree = app.start()
 document.body.appendChild(tree)

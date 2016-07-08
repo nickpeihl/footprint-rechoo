@@ -25,11 +25,11 @@ module.exports = {
   },
   reducers: {
     toggleClickable: function (action, state) {
-      var newButtons = state.buttons.map(function (button) {
+      const newButtons = state.buttons.map(function (button) {
         button.disabled = !button.disabled
         return button
       })
-      return {buttonGroup: state.buttons.concat(newButtons)}
+      return { buttonGroup: state.buttons.concat(newButtons) }
     }
   },
   effects: {}

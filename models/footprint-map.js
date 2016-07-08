@@ -12,5 +12,9 @@ module.exports = {
       center: [48.5, -123.0],
       zoom: 10
     }]
+  },
+  reducers: {
+    updateMap: (data, state) =>
+      ({ zoom: data.zoom, center: data.center, gj: data.gj })
   }
 }

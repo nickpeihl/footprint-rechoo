@@ -24,6 +24,7 @@
     "tachyons": "4.0.0-beta.33"
   },
   "devDependencies": {
-    "budo": "^8.3.0"
+    "budo": "^8.3.0",
+    "choo": "^3.0.2"
   }
 }

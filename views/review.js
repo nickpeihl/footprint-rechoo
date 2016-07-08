@@ -1,17 +1,17 @@
-var choo = require('choo')
+const html = require('choo/html')
 
-var nav = require('../elements/nav')
-var maps = require('../elements/maps')
-var buttons = require('../elements/button-group')
+const nav = require('../elements/nav')
+const maps = require('../elements/maps')
+const buttons = require('../elements/button-group')
 
-module.exports = function (params, state, send) {
-  return choo.view`
+module.exports = (state, prev, send) => {
+  return html`
 <div class="h-inherit">
-${nav(params, state, send)}
+${nav(state, prev, send)}
 <article class="tc ma2">
-${maps(params, state, send)}
+${maps(state, prev, send)}
 <div id="buttonGroup" class="w-80 mw7 center">
-${buttons(params, state, send)}
+${buttons(state, prev, send)}
 </div>
 </article>
 </div>

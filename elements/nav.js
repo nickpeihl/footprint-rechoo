@@ -1,8 +1,8 @@
-var choo = require('choo')
+const html = require('choo/html')
 
-module.exports = function (params, state, send) {
-  var navs = state.params.navs
-  return choo.view`
+module.exports = (state, prev, send) => {
+  const navs = state.navs
+  return html`
 <header class="bg-black-90 w-100 ph2 pv2 pv4-l ph4-l">
 <nav class="f6 fw6 ttu tracked">
 <a class="link dim white dib mr3" href="/" title="Home">Home</a>
@@ -15,7 +15,7 @@ ${navs.map(function (nav) {
 }
 
 function createNav (nav) {
-  return choo.view`
+  return html`
 <a class="link dim white dib mr3" href="/${nav}" title="${nav}">${nav}</a>
 `
 }
