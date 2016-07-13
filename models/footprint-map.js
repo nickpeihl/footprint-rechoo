@@ -14,7 +14,11 @@ module.exports = {
     }]
   },
   reducers: {
-    updateMap: (data, state) =>
-      ({ zoom: data.zoom, center: data.center, gj: data.gj })
+    updateMap: (data, state) => {
+      const newMaps = state.maps.map((lMap) => {
+        Object.assign(lMap, {zoom: data.zoom, center: data.center})
+      })
+      return newMaps
+    }
   }
 }
