@@ -15,13 +15,12 @@
     ]
   },
   "dependencies": {
-    "choo": "git://github.com/yoshuawuyts/choo.git#master",
     "css-wipe": "^4.2.2",
     "esri-leaflet": "^1.0.3",
     "insert-css": "^0.2.0",
     "leaflet": "^0.7.7",
     "sheetify": "^5.0.3",
-    "tachyons": "4.0.0-beta.33"
+    "tachyons": "^4.0.1"
   },
   "devDependencies": {
     "budo": "^8.3.0",
