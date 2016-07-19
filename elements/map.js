@@ -17,22 +17,21 @@ module.exports = (options) => {
   const mapId = options.initialState.id
   const el = html`<div onload=${onload} id=${mapId} class="h5 ${prefix}"></div>`
   const map = createMap(el, options.initialState)
+  const layer = L.geoJson(options.initialState.gj)
+  layer.addTo(map)
 
   return (state, prev, send) => {
     map.setZoom(state.footprintMaps.zoom)
     map.panTo(state.footprintMaps.center)
+    layer.clearLayers()
+    const features = state.footprintMaps.maps.find((x) => x.id === mapId).gj
+    layer.addData(features)
     return html`
  <div class="dib ma2 ba bw1 mw7 w-80 w-40-ns bg-near-white tc tl-ns">
     <h2 class="ma2 f4">${mapId}</h2>
       ${el}
   </div>
 `
-  }
-}
-
-function findFeatures (fMap) {
-  if (this.id === fMap.id) {
-    return fMap.gj
   }
 }
 

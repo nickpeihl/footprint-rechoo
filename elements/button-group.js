@@ -12,6 +12,6 @@ module.exports = (state, prev, send) => {
   return el
 
   function onClick (e) {
-    send('doAsyncProcess', { id: e.target.id })
+    send('voteService:addVote', { id: e.target.id })
   }
 }

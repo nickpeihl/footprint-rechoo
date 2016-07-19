@@ -5,6 +5,12 @@ const maps = require('../elements/maps')
 const buttons = require('../elements/button-group')
 
 module.exports = (state, prev, send) => {
+  const voteService = state.voteService.service
+
+  if (!voteService) {
+    send('voteService:getVoteService')
+  }
+
   return html`
 <div class="h-inherit">
 ${nav(state, prev, send)}

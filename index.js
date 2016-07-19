@@ -5,7 +5,13 @@ sf('css-wipe/dest/bundle')
 sf('tachyons')
 sf('./node_modules/leaflet/dist/leaflet.css', { global: true })
 
-const app = choo()
+const app = choo({
+  onError: (err, state, createSend) => {
+    console.log(err)
+    const send = createSend('error')
+    send('app:alert', err)
+  }
+})
 
 const review = require('./views/review')
 
@@ -28,6 +34,7 @@ app.model({
 
 app.model(require('./models/footprint-map'))
 app.model(require('./models/buttons'))
+app.model(require('./models/vote-service'))
 
 app.router((route) => [
   route('/', review)

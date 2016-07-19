@@ -1,0 +1,1 @@
+require('./models/vote-service')
