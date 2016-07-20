@@ -12,6 +12,8 @@ module.exports = (state, prev, send) => {
   return el
 
   function onClick (e) {
-    send('voteService:addVote', { id: e.target.id })
+    send('voteService:sendVote', { id: e.target.id }, (err, res) => {
+      console.log(arguments)
+    })
   }
 }
