@@ -1,16 +1,17 @@
 const choo = require('choo')
+const chooLog = require('choo-log')
 const sf = require('sheetify')
 
 sf('css-wipe/dest/bundle')
 sf('tachyons')
 sf('./node_modules/leaflet/dist/leaflet.css', { global: true })
 
+const logger = chooLog()
+
 const app = choo({
-  onError: (err, state, createSend) => {
-    console.log(err)
-    const send = createSend('error')
-    send('app:alert', err)
-  }
+  onAction: logger.onAction,
+  onError: logger.onError,
+  onStateChange: logger.onStateChange
 })
 
 const review = require('./views/review')

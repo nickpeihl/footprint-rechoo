@@ -25,6 +25,7 @@
   "devDependencies": {
     "budo": "^8.3.0",
     "choo": "^3.0.2",
+    "choo-log": "^1.4.0",
     "tape": "^4.6.0",
     "tape-run": "^2.1.4"
   }
